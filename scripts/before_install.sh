@@ -1,12 +1,11 @@
 #!/bin/bash
 
-# Update system and install Docker
-yum update -y
-yum install -y docker
-systemctl start docker
-usermod -aG docker ec2-user
+# Stop running containers (optional)
+docker stop my-app-container || true
+docker rm my-app-container || true
 
-# Clean up old deployment files
+# Clean old deployment
 rm -rf /home/ec2-user/app/*
-mkdir -p /home/ec2-user/app
 
+# Recreate the app directory just in case
+mkdir -p /home/ec2-user/app
