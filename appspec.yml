@@ -20,3 +20,10 @@ hooks:
     - location: scripts/start_docker.sh
       timeout: 300
       runas: ec2-user
+      
+  ApplicationStop:
+    - location: scripts/cleanup.sh
+      timeout: 180
+      runas: ec2-user
+
+
