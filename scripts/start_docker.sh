@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/ubuntu/app
+cd /home/ec2-user/app
 
 # Stop and remove any existing container
 docker stop my-app-container || true
